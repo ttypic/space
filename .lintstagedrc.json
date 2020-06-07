@@ -1,0 +1,3 @@
+{
+    "*.js": ["stylelint --syntax css-in-js --fix", "eslint --fix"]
+}

@@ -1,0 +1,27 @@
+{
+  "extends": "react-app",
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": "warn",
+    "no-console": "warn",
+    "no-restricted-imports": [
+      "error",
+      {
+        "paths": [
+          {
+            "name": "styled-components",
+            "message": "Please import from styled-components/macro."
+          },
+          {
+            "name": "lodash",
+            "message": "Please pick lodash function, instead of full module import"
+          }
+        ],
+        "patterns": [
+          "lodash/*",
+          "!lodash/debounce"
+        ]
+      }
+    ]
+  }
+}
