@@ -29,7 +29,7 @@ const remapKeys = editor => {
     editor.commands.addCommand({
         name: 'beautify',
         bindKey: { win: 'ctrl-alt-l', mac: 'command-alt-l' },
-        exec: function (editor) {
+        exec: editor => {
             const code = editor.session.getValue();
             try {
                 const parsed = JSON.parse(code);
@@ -41,10 +41,10 @@ const remapKeys = editor => {
     });
 
     editor.commands.addCommand({
-        name: 'beautify',
+        name: 'enumerate',
         bindKey: { win: 'ctrl-shift-p', mac: 'command-shift-p' },
         multiSelectAction: 'forEach',
-        exec: function (editor) {
+        exec: editor => {
             const { row } = editor.selection.lead;
             editor.insert(`${row + 1}`);
         }
