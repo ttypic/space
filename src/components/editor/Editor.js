@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { memo } from 'react';
 import StyledEditor from 'components/editor/StyledEditor';
 import AceContainer from 'components/ace/AceContainer';
 
-const Editor = () => {
+const Editor = memo(({ onStatusChange }) => {
     return (
         <StyledEditor>
-            <AceContainer />
+            <AceContainer onStatusChange={onStatusChange} />
         </StyledEditor>
     );
-};
+});
 
 export default Editor;
