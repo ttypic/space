@@ -1,7 +1,8 @@
 import React from 'react';
+import StyledToolbar from 'components/toolbar/StyledToolbar';
 
 const Toolbar = () => {
-    return <div></div>;
+    return <StyledToolbar />;
 };
 
 export default Toolbar;
