@@ -4,6 +4,7 @@ import remapKeys from 'components/ace/remap-keys';
 
 import 'ace-builds/src-noconflict/theme-dracula';
 import 'ace-builds/src-noconflict/mode-json';
+import { fileUploadEmitter } from 'utils/file-upload-emmiter';
 
 const absoluteFill = {
     position: 'absolute',
@@ -57,6 +58,13 @@ const AceContainer = ({ onStatusChange }) => {
             editor.destroy();
         };
     }, [statusUpdate]);
+
+    useEffect(() => {
+        return fileUploadEmitter.subscribe(({ content }) => {
+            const editor = aceEditor.current;
+            editor.session.setValue(content);
+        });
+    }, []);
 
     return <div ref={editorEl} style={absoluteFill} />;
 };
