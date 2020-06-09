@@ -57,7 +57,7 @@ const remapKeys = editor => {
     editor.commands.addCommand({
         name: 'eval',
         description: 'Eval expression',
-        bindKey: { win: 'ctrl-j', mac: 'command-j' },
+        bindKey: { win: 'ctrl-shift-e', mac: 'command-shift-e' },
         multiSelectAction: 'forEach',
         scrollIntoView: 'cursor',
         exec: editor => {
@@ -76,6 +76,34 @@ const remapKeys = editor => {
                 editor.selection.setSelectionRange(
                     new Range(start.row, start.column, start.row, start.column + evaledString.length)
                 );
+            } catch (e) {
+                // do nothing
+            }
+        }
+    });
+
+    editor.commands.addCommand({
+        name: 'calc',
+        description: 'Calculate expression',
+        bindKey: { win: 'ctrl-shift-c', mac: 'command-shift-c' },
+        multiSelectAction: 'forEach',
+        scrollIntoView: 'cursor',
+        exec: editor => {
+            if (!editor.selection.isEmpty()) {
+                return;
+            }
+            editor.selection.selectLine();
+
+            const range = editor.getSelectionRange();
+            const text = editor.session.getTextRange(range);
+
+            try {
+                // eslint-disable-next-line no-eval
+                const evaled = eval(text);
+                const evaledString = String(evaled);
+                editor.selection.clearSelection();
+                const suffix = text.endsWith('\n') ? '= ' : '\n= ';
+                editor.insert(suffix + evaledString + '\n');
             } catch (e) {
                 // do nothing
             }
