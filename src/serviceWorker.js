@@ -66,16 +66,6 @@ function registerValidSW(swUrl, config) {
     navigator.serviceWorker
         .register(swUrl)
         .then(registration => {
-            if (registration.waiting && registration.active) {
-                // The page has been loaded when there's already a waiting and active SW.
-                // This would happen if skipWaiting() isn't being called, and there are
-                // still old tabs open.
-                console.log('New content is available and will be used when all tabs for this page are closed');
-
-                if (config && config.onWaiting) {
-                    config.onWaiting(registration);
-                }
-            }
             registration.onupdatefound = () => {
                 const installingWorker = registration.installing;
                 if (installingWorker == null) {
