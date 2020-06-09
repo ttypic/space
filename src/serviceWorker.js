@@ -54,6 +54,15 @@ export function register(config) {
 }
 
 function registerValidSW(swUrl, config) {
+    const hasController = !!navigator.serviceWorker.controller;
+
+    if (hasController) {
+        navigator.serviceWorker.addEventListener('controllerchange', () => {
+            // Reload page (the user will have agreed to this).
+            window.location.reload();
+        });
+    }
+
     navigator.serviceWorker
         .register(swUrl)
         .then(registration => {
