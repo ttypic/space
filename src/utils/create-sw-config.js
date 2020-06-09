@@ -19,5 +19,6 @@ const handleSwUpdate = registration => {
 
 export const createSwConfig = () => ({
     onSuccess: handleSwInstall,
-    onUpdate: handleSwUpdate
+    onUpdate: handleSwUpdate,
+    onWaiting: handleSwUpdate
 });
