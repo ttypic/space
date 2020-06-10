@@ -6,6 +6,11 @@ import 'ace-builds/src-noconflict/theme-dracula';
 import 'ace-builds/src-noconflict/mode-json';
 import { fileUploadEmitter } from 'utils/file-upload-emmiter';
 
+// eslint-disable-next-line import/no-webpack-loader-syntax
+import jsonWorker from 'file-loader!ace-builds/src-noconflict/worker-json.js';
+
+ace.config.setModuleUrl('ace/mode/json_worker', jsonWorker);
+
 const absoluteFill = {
     position: 'absolute',
     top: 0,
