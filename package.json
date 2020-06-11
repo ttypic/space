@@ -55,5 +55,11 @@
     "stylelint-config-recommended": "^3.0.0",
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-order": "^4.1.0"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "<rootDir>/src/**/*.{js,jsx,ts,tsx}",
+      "!<rootDir>/src/*"
+    ]
   }
 }

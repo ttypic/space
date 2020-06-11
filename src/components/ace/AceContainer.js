@@ -4,10 +4,8 @@ import remapKeys from 'components/ace/remap-keys';
 
 import 'ace-builds/src-noconflict/theme-dracula';
 import 'ace-builds/src-noconflict/mode-json';
-import { fileUploadEmitter } from 'utils/file-upload-emmiter';
-
-// eslint-disable-next-line import/no-webpack-loader-syntax
-import jsonWorker from 'file-loader!ace-builds/src-noconflict/worker-json.js';
+import { fileUploadEmitter } from 'emitters/file-upload-emmiter';
+import { jsonWorker } from 'components/ace/worker-files';
 
 ace.config.setModuleUrl('ace/mode/json_worker', jsonWorker);
 

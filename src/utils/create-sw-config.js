@@ -1,7 +1,7 @@
-import { showSnack } from 'utils/snack-emmiter';
+import { showSnack } from 'emitters/snack-emmiter';
 
 const handleSwInstall = () => {
-    showSnack('Ready to work offline', { timeout: 5000 });
+    return showSnack('Ready to work offline', { timeout: 5000 });
 };
 
 const skipWaiting = registration => {
@@ -10,7 +10,7 @@ const skipWaiting = registration => {
 };
 
 const handleSwUpdate = registration => {
-    showSnack('Update available', {
+    return showSnack('Update available', {
         actions: ['reload', 'dismiss']
     }).then(result => {
         if (result === 'reload') skipWaiting(registration);

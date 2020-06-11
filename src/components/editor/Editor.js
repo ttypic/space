@@ -2,7 +2,7 @@ import React, { memo, useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
 import StyledEditor from 'components/editor/StyledEditor';
 import AceContainer from 'components/ace/AceContainer';
-import { fileUploadEmitter } from 'utils/file-upload-emmiter';
+import { fileUploadEmitter } from 'emitters/file-upload-emmiter';
 
 const Editor = memo(({ onStatusChange }) => {
     const onDrop = useCallback(acceptedFiles => {

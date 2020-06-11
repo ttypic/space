@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { Transition, TransitionGroup } from 'react-transition-group';
 import { nanoid } from 'nanoid';
-import { snackEmitter } from 'utils/snack-emmiter';
+import { snackEmitter } from 'emitters/snack-emmiter';
 import { SnackText, StyledSnackBar, StyledSnackContainer } from 'components/snack-container/StyledSnackBar';
 import StyledSnackButton from 'components/snack-container/StyledSnackButton';
 
