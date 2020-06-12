@@ -1,6 +1,6 @@
 import { snackEmitter, showSnack } from 'emitters/snack-emmiter';
 
-test('promisify emitter', () => {
+test('it promisify emitter', () => {
     const expectedOptions = {};
     snackEmitter.subscribe(({ message, options, onResult }) => {
         onResult('action');

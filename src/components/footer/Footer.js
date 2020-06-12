@@ -4,7 +4,7 @@ import StyledFooter from 'components/footer/StyledFooter';
 const buildStatusText = ({ row, column, carets, selectionRange, empty }) => {
     if (empty) return '';
 
-    if (carets) {
+    if (carets > 1) {
         return `${carets} carets`;
     } else if (!selectionRange) {
         return `Line ${row + 1}, Column ${column + 1}`;
@@ -15,7 +15,7 @@ const buildStatusText = ({ row, column, carets, selectionRange, empty }) => {
     if (start.row === end.row) {
         return `${Math.abs(end.column - start.column)} chars`;
     } else {
-        return `${Math.abs(end.row - start.row)} lines`;
+        return `${Math.abs(end.row - start.row)} line breaks`;
     }
 };
 

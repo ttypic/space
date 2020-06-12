@@ -3,16 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
+    "@testing-library/jest-dom": "^5.10.0",
+    "@testing-library/react": "^10.2.1",
+    "@testing-library/user-event": "^11.4.1",
     "ace-builds": "^1.4.11",
     "nanoid": "^3.1.9",
     "polished": "^3.6.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-dropzone": "^11.0.1",
-    "react-scripts": "3.4.1",
+    "react-scripts": "3.4.0",
     "react-transition-group": "^4.4.1",
     "styled-components": "^5.1.1"
   },
@@ -59,7 +59,8 @@
   "jest": {
     "collectCoverageFrom": [
       "<rootDir>/src/**/*.{js,jsx,ts,tsx}",
-      "!<rootDir>/src/*"
+      "!<rootDir>/src/*",
+      "!<rootDir>/src/**/Styled*"
     ]
   }
 }

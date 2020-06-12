@@ -1,7 +1,6 @@
 import styled from 'styled-components/macro';
 import Logo from 'components/logo/Logo';
-import JsonIcon from 'components/lang-icons/JsonIcon';
-import { draculaBorder, draculaIcon, draculaIconHover, draculaToolbar } from 'constants/colors';
+import { draculaToolbar } from 'constants/colors';
 
 const StyledToolbar = styled.div`
     display: flex;
@@ -18,29 +17,6 @@ const StyledToolbar = styled.div`
 export const StyledLogo = styled(Logo)`
     width: 1.5rem;
     height: 1.5rem;
-`;
-
-export const StyledJsonIcon = styled(JsonIcon)`
-    width: 1.5rem;
-    height: 1.5rem;
-    margin-left: 4rem;
-
-    & > rect {
-        fill: ${props => (props.active ? draculaBorder : 'none')};
-    }
-
-    & > path {
-        fill: ${draculaIcon};
-    }
-
-    &:hover > path {
-        fill: ${draculaIconHover};
-    }
-
-    &:hover > rect {
-        stroke: ${draculaBorder};
-        stroke-width: 2;
-    }
 `;
 
 export default StyledToolbar;

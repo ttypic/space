@@ -1,6 +1,6 @@
 import createEventEmitter from './create-event-emitter';
 
-test('emits single arg to listener', () => {
+test('it emits single arg to listener', () => {
     const eventEmitter = createEventEmitter();
     const listener = jest.fn();
 
@@ -10,7 +10,7 @@ test('emits single arg to listener', () => {
     expect(listener).toHaveBeenNthCalledWith(1, 'event');
 });
 
-test('emits two args to listener', () => {
+test('it emits two args to listener', () => {
     const eventEmitter = createEventEmitter();
     const listener = jest.fn();
 
@@ -20,7 +20,7 @@ test('emits two args to listener', () => {
     expect(listener).toHaveBeenNthCalledWith(1, 'event', 'type');
 });
 
-test('emits event to each listener', () => {
+test('it emits event to each listener', () => {
     const eventEmitter = createEventEmitter();
     const listener1 = jest.fn();
     const listener2 = jest.fn();
@@ -34,7 +34,7 @@ test('emits event to each listener', () => {
     expect(listener2).toHaveBeenNthCalledWith(1, 'event');
 });
 
-test('do not emit event to unsubscribed listener', () => {
+test('it does not emit event to unsubscribed listener', () => {
     const eventEmitter = createEventEmitter();
     const listener1 = jest.fn();
     const listener2 = jest.fn();
@@ -50,7 +50,7 @@ test('do not emit event to unsubscribed listener', () => {
     expect(listener2).toHaveBeenNthCalledWith(1, 'event');
 });
 
-test('throw error if subscribe argument is not function', () => {
+test('it throws error if subscribe argument is not function', () => {
     const eventEmitter = createEventEmitter();
     expect(() => eventEmitter.subscribe({})).toThrow(Error);
 });
