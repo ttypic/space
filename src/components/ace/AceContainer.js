@@ -44,10 +44,12 @@ const AceContainer = ({ onStatusChange }) => {
 
     useEffect(() => {
         const editor = ace.edit(editorEl.current);
+        editor.textInput.getElement().setAttribute('aria-label', 'Space Text Editor');
         editor.setTheme('ace/theme/dracula');
         editor.session.setMode('ace/mode/json');
         editor.session.setTabSize(4);
         editor.session.setUseSoftTabs(true);
+        editor.session.setNavigateWithinSoftTabs(true);
 
         editor.on('changeStatus', statusUpdate);
         editor.on('changeSelection', statusUpdate);
