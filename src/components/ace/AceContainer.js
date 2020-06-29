@@ -4,7 +4,7 @@ import remapKeys from 'components/ace/remap-keys';
 
 import 'ace-builds/src-noconflict/theme-dracula';
 import 'ace-builds/src-noconflict/mode-json';
-import { fileUploadEmitter } from 'emitters/file-upload-emmiter';
+import { fileUploadEmitter } from 'emitters/file-upload-emitter';
 import { jsonWorker } from 'components/ace/worker-files';
 
 ace.config.setModuleUrl('ace/mode/json_worker', jsonWorker);

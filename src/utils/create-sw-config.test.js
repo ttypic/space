@@ -1,7 +1,7 @@
 import { createSwConfig } from 'utils/create-sw-config';
-import { showSnack } from 'emitters/snack-emmiter';
+import { showSnack } from 'emitters/snack-emitter';
 
-jest.mock('emitters/snack-emmiter', () => ({ showSnack: jest.fn() }));
+jest.mock('emitters/snack-emitter', () => ({ showSnack: jest.fn() }));
 
 beforeEach(() => {
     showSnack.mockClear();

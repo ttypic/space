@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, act, fireEvent } from '@testing-library/react';
 import SnackContainer from 'components/snack-container/SnackContainer';
-import { snackEmitter } from 'emitters/snack-emmiter';
+import { snackEmitter } from 'emitters/snack-emitter';
 
 jest.mock('nanoid', () => ({ nanoid: jest.fn(() => '1') }));
 

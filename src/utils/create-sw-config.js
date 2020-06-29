@@ -1,4 +1,4 @@
-import { showSnack } from 'emitters/snack-emmiter';
+import { showSnack } from 'emitters/snack-emitter';
 
 const handleSwInstall = () => {
     return showSnack('Ready to work offline', { timeout: 5000 });

@@ -1,4 +1,4 @@
-import { snackEmitter, showSnack } from 'emitters/snack-emmiter';
+import { snackEmitter, showSnack } from 'emitters/snack-emitter';
 
 test('it promisify emitter', () => {
     const expectedOptions = {};
